@@ -13,4 +13,6 @@ public interface StudentService {
 
     Student update(int id,Student newStd);
 
+    String deleteStdById(int id);
+
 }
