@@ -27,4 +27,10 @@ public class StudentController {
         List<Student> stdList=studentService.getAll();
         return new ResponseEntity<>(stdList,HttpStatus.OK);
     }
+
+    @PutMapping("/updateStudent/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable("id") int id, @RequestBody Student student){
+        Student student1=studentService.update(id,student);
+        return new ResponseEntity<>(student1,HttpStatus.OK);
+    }
 }
