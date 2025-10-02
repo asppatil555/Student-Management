@@ -26,4 +26,16 @@ public class StudentServiceImpl implements StudentService {
         List<Student> stdList=studentRepo.findAll();
         return stdList;
     }
+
+    @Override
+    public Student update(int id,Student newStd) {
+        Student student=studentRepo.findById(id).orElseThrow(()->new NullPointerException("id does not found"));
+        student.setFName(newStd.getFName());
+        student.setLName(newStd.getLName());
+        Student updateStudent=studentRepo.save(student);
+
+        return updateStudent;
+    }
+
+
 }
