@@ -37,5 +37,11 @@ public class StudentServiceImpl implements StudentService {
         return updateStudent;
     }
 
+    @Override
+    public String deleteStdById(int id) {
+        studentRepo.deleteById(id);
+        return "Student Delete";
+    }
+
 
 }
