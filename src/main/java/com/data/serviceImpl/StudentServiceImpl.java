@@ -43,5 +43,12 @@ public class StudentServiceImpl implements StudentService {
         return "Student Delete";
     }
 
+    @Override
+    public Student getById(int id) {
+       Student student= studentRepo.findById(id).orElseThrow(()->new NullPointerException("Id does not found"));
+
+        return student;
+    }
+
 
 }

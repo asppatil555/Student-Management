@@ -42,4 +42,11 @@ public class StudentController {
 
 
 
+    @GetMapping("/GetById/{id}")
+    public ResponseEntity<Student> getById(@PathVariable("id") int id){
+       Student student= studentService.getById(id);
+        return new ResponseEntity<>(student,HttpStatus.OK);
+
+    }
+
 }
